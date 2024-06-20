@@ -1,0 +1,79 @@
+<ion-header [translucent]="true" class="content">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Detail Book
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content">
+  
+  <!-- Detail Book Section -->
+  <ion-card class="custom-card-book-detail">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <!-- Book Cover -->
+            <ion-img src="assets/imgs/1.jpg"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <!-- Book Information -->
+            <ion-card-title class="text" style="font-size: large;">Laut Bercerita</ion-card-title>
+            <p class="text" style="margin: 0;">Harriss</p>
+            <p class="text" style="margin: 0;">Ratings: <ion-icon style="color: yellow;" name="star"></ion-icon> {{ book?.ratings }}</p>
+            <p>Liked by: <ion-icon name="heart" color="danger"></ion-icon>person</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  
+  <!-- Book Description Section -->
+  <ion-card class="custom-card-book-detail">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <p class="text" style="text-align: left;"><strong>deskripsi:</strong></p>
+            <p class="text" style="text-align: left;">{{ book?.deskripsi }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <!-- Tab Beranda -->
+    <ion-tab-button tab="beranda" routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Beranda</ion-label>
+    </ion-tab-button>
+
+    <!-- Tab Perpustakaan -->
+    <ion-tab-button tab="library" routerLink="/library">
+      <ion-icon name="book-outline"></ion-icon>
+      <ion-label>Library</ion-label>
+    </ion-tab-button>
+
+    <!-- Tab Kategori -->
+    <ion-tab-button tab="histori" routerLink="/histori">
+      <ion-icon name="apps-outline"></ion-icon>
+      <ion-label>histori</ion-label>
+    </ion-tab-button>
+
+    <!-- Tab Profil -->
+    <ion-tab-button tab="profil" routerLink="/profil">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Profil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

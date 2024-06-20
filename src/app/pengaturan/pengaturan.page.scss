@@ -1,0 +1,76 @@
+/* Mengatur warna latar belakang untuk header */
+ion-header {
+    --background: #E8B31F; /* warna latar belakang header */
+    --color: #fff; /* warna teks header */
+}
+  
+/* Mengatur warna toolbar */
+ion-toolbar {
+    --background: #333; /* warna latar belakang toolbar */
+    --color: #ffffff; /* warna teks toolbar */
+}
+  
+/* Mengatur warna latar belakang untuk konten */
+ion-content {
+    --background: none; /* menghilangkan background default */
+    background-image: url(https://i.pinimg.com/736x/ce/85/7a/ce857aeeedf9046b3a3fdc9241ee05a9.jpg); /* ganti dengan path ke gambar background Anda */
+    background-size: cover; /* membuat gambar menutupi seluruh elemen */
+    background-position: center; /* membuat gambar berada di tengah */
+    background-repeat: no-repeat; /* memastikan gambar tidak diulang */
+}
+
+  
+/* Mengatur warna kartu */
+ion-card {
+    --background: #fff; /* warna latar belakang kartu */
+    --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* bayangan kartu */
+    margin: 10px;
+    border-radius: 10px; /* sudut membulat */
+}
+  
+/* Mengatur warna header kartu */
+ion-card-header {
+    --color: #333; /* warna teks header kartu */
+}
+  
+/* Mengatur warna item dalam kartu */
+ion-item {
+    --background: #03cef7; /* warna latar belakang item */
+    --border-color: #e0e0e0; /* warna border item */
+    --color: #fff; /* warna teks item */
+    margin: 5px 0;
+    border-radius: 10px; /* sudut membulat */
+}
+  
+/* Mengatur warna ikon dalam item */
+ion-icon {
+    --color: #fff !important; /* warna ikon */
+}
+  
+/* Mengatur warna label dalam item */
+ion-label {
+    --color: #000000; /* warna teks utama */
+}
+  
+/* Mengatur warna teks deskripsi dan catatan */
+ion-label p {
+    color: #ffffff; /* warna teks deskripsi */
+}
+  
+ion-note {
+    color: #fff; /* warna teks catatan */
+}
+  
+/* Mengatur warna ikon chevron di item */
+ion-item ion-icon[slot="end"] {
+    --color: #fff !important; /* warna ikon chevron */
+    color: #fff !important; /* ini untuk memastikan perubahan */
+}
+  
+/* Mengatur warna latar belakang item saat diklik */
+ion-item[button]:active {
+    --background: #e9ecef; /* warna latar belakang saat item diklik */
+}
+
+
+/* Gaya kustom untuk kotak centang pada alert */

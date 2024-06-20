@@ -1,0 +1,46 @@
+.text {
+    font-family: "Poppins", sans-serif !important;
+  }
+  
+  .book-list {
+    padding: 1em;
+  }
+  
+  .vertical-center {
+    align-items: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .top-read-card {
+    --box-shadow: none;
+    margin-bottom: 1em; /* Menambahkan jarak antara kartu buku */
+  }
+  
+  .search {
+    --box-shadow: none;
+    border-radius: 50%;
+    margin: 1em; /* Menambahkan margin di sekitar search bar */
+  }
+  
+  .text-book-title {
+    white-space: nowrap; /* Agar teks tidak melipat jika lebih panjang dari lebar kolom */
+    overflow: hidden; /* Menghilangkan teks yang melebihi lebar kolom */
+    text-overflow: ellipsis;
+    color: black;
+  }
+  
+  .text-author {
+    color: grey;
+  }
+  
+  
+  ion-searchbar.search {
+    --border-radius: 20px;
+  }
+  .content {
+    --background: url(https://i.pinimg.com/736x/ce/85/7a/ce857aeeedf9046b3a3fdc9241ee05a9.jpg) no-repeat center center fixed;
+    background-size: cover; /* Menyesuaikan gambar latar belakang */
+  }

@@ -1,0 +1,53 @@
+.custom-card-book-detail {
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  ion-img {
+    display: block; /* Memastikan gambar memiliki display block agar dapat diatur margin */
+    margin: 0 auto; /* Mengatur margin auto agar gambar berada di tengah */
+    max-width: 100px; /* Mengatur lebar maksimum gambar */
+  }
+  
+  
+  .text {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px; /* Ubah ukuran teks sesuai kebutuhan */
+    margin-bottom: 8px; /* Memberi ruang di bawah setiap paragraf */
+  }
+  
+  .text-book-title {
+    font-weight: bold;
+    font-size: large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .author-text {
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .content {
+    --background: url('/assets/imgs/b1.jpg') no-repeat center center fixed;
+    background-size: cover; /* Menyesuaikan gambar latar belakang */
+  }
+  
+  .large-button {
+    font-size: 16px; /* Ukuran teks dalam tombol */
+    padding: 12px 24px; /* Padding (jarak dalam tombol) */
+    border-radius: 8px; /* Sudut tombol */
+    background-color: #88c2ff; /* Warna latar belakang tombol */
+    color: #ffffff; /* Warna teks di dalam tombol */
+    border: none; /* Menghilangkan border */
+    cursor: pointer; /* Mengubah kursor saat mengarah ke tombol */
+    transition: background-color 0.3s ease; /* Animasi saat mengubah warna latar belakang */
+  }
+  
+  .large-button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat hover */
+  }
+  

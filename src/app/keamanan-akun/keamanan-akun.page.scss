@@ -1,0 +1,84 @@
+/* General styling for the entire content */
+ion-content {
+    --background: #f7f7f7;
+    font-family: 'Helvetica Neue', sans-serif;
+    padding: 10px;
+  }
+  
+  /* Header styling */
+  ion-header {
+    --background: #333;
+    --color: #fff;
+  }
+  
+  ion-toolbar {
+    --background: #333;
+  }
+  
+  ion-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Card styling */
+  ion-card {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  ion-card-header {
+    background-color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+  }
+  
+  ion-card-title {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  ion-card-content {
+    background-color: #fff;
+    padding: 15px;
+  }
+  
+  /* Item and label styling */
+  ion-item {
+    --background: transparent;
+    margin: 10px 0;
+  }
+  
+  ion-label {
+    color: #333;
+  }
+  
+  ion-input {
+    --padding-start: 10px;
+    --padding-end: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #333;
+  }
+  
+  /* Button styling */
+  ion-button {
+    --border-radius: 8px;  /* Increased border radius for oval shape */
+    --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 1em;
+    margin: 10px 0;
+    --background-hover: #E8B31F;
+    --background: #E8B31F; /* Mengatur latar belakang menjadi transparan */
+    --color: #fff; /* Mengatur warna teks menjadi putih */
+ }
+
+ ion-content {
+  --background: none; /* menghilangkan background default */
+  background-image: url(https://i.pinimg.com/564x/90/bf/3d/90bf3d44055625d4bf051796d98ad485.jpg); /* ganti dengan path ke gambar background Anda */
+  background-size: cover; /* membuat gambar menutupi seluruh elemen */
+  background-position: center; /* membuat gambar berada di tengah */
+  background-repeat: no-repeat; /* memastikan gambar tidak diulang */
+}

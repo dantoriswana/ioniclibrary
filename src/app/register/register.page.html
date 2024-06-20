@@ -1,0 +1,31 @@
+<ion-content fullscreen>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/login"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="register-container">
+    <h1>Selamat Bergabung <br> Daftar Untuk Membuat Akun</h1>
+
+    <ion-card class="register-card">
+      <ion-card-content>
+        <ion-item>
+          <ion-input type="name" placeholder="Masukan Nama"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" placeholder="Masukan email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Masukan password"></ion-input>
+          <ion-button fill="clear" slot="end">
+            <ion-icon name="eye-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-button expand="block" class="register-button" routerLink="/login">Daftar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

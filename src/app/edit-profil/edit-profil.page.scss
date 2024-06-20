@@ -1,0 +1,49 @@
+ion-toolbar {
+    --background:#333;
+    --color: #fff; /* Warna teks putih */
+    --ion-toolbar-height: 60px; /* Tinggi toolbar */
+}
+
+
+ion-title {
+    font-weight: bold; /* Menjadikan teks judul tebal */
+    font-size: 20px; /* Ukuran teks judul */
+}
+
+ion-card {
+    --background: #13121278; /* Warna latar belakang card */
+    --ion-color-primary: #000; /* Warna teks utama */
+    border-radius: 10px; /* Sudut card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    margin-bottom: 20px;
+}
+
+ion-card-header {
+    background-color: #333;
+    border-radius: 8px 8px 0 0;
+
+}
+
+ion-card-title {
+    font-size: 22px;
+    font-weight: bold;
+    background: #333;
+    --color: #fff; /* Pastikan setiap properti diakhiri dengan titik koma */
+    text-align: center;
+}
+
+
+ion-item {
+    --background: #f8f9fa;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    --inner-padding-top: 10px;
+    --inner-padding-bottom: 10px;
+}
+ion-button {
+    --background: #333; /* Warna latar belakang tombol */
+    --color: #fff; /* Warna teks tombol */
+    font-weight: bold;
+    
+}
+

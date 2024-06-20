@@ -1,0 +1,279 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.header {
+  background: #262625; /* Adjust color as needed */
+  color: #ffffff;
+  padding: 20px;
+  padding-bottom: 80px; /* Adjust padding-bottom to ensure overlap */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.icon-card {
+  color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 10px 16px rgba(11, 11, 11, 0.1);
+  padding: 5px;
+  width: 100%; /* Sesuaikan lebar kartu */
+  height: 100%; /* Sesuaikan tinggi kartu */
+  display: flex;
+  flex-direction: column; /* Menyusun konten secara vertikal */
+  align-items: center;
+  text-align: center;
+}
+
+.icon-card .card-logo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.icon-card .card-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.icon-card .card-title {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000; /* Pastikan teks judul berwarna hitam agar terlihat */
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.icon-card ion-card-header {
+  margin: 10px 0;
+}
+
+.icon-card ion-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.icon-card ion-card-subtitle {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #cecece;
+}
+
+.icon-card .balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.icon-card .balance span {
+  font-size: 14px;
+}
+
+.icon-card .balance h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.transaction-list {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.transaction-list ion-item {
+  --padding-start: 5px;
+  --inner-padding-end: 5px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.transaction-list ion-icon {
+  font-size: 24px;
+  color: #4facfe;
+}
+
+.transaction-list ion-note {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4facfe;
+}
+
+.transaction-list ion-label h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.transaction-list ion-label p {
+  margin: 0;
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+.animate-up {
+  animation: slide-up 1.5s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.text {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+}
+
+.scrolling-wrapper .card {
+  display: inline-block;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.scrolling-wrapper {
+  -webkit-overflow-scrolling: touch;
+  font-family: "Poppins", sans-serif;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.new-arrival-title {
+  padding-left: 0.5em;
+}
+
+.vertical-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.top-read-title {
+  padding-left: 0.5em;
+}
+
+.new-arrival-title {
+  padding-left: 0.5em;
+}
+
+.arrival-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -10px; /* Atur jarak antara judul dan konten */
+}
+
+.top-read-card {
+  --box-shadow: none;
+}
+
+.text-book-title {
+  white-space: nowrap; /* Agar teks tidak melipat jika lebih panjang dari lebar kolom */
+  overflow: hidden; /* Menghilangkan teks yang melebihi lebar kolom */
+  text-overflow: ellipsis;
+  color: black;
+}
+
+.text-author {
+  color: grey;
+}
+
+
+ion-content {
+  --background: none; /* menghilangkan background default */
+  background-image: url(https://i.pinimg.com/736x/ce/85/7a/ce857aeeedf9046b3a3fdc9241ee05a9.jpg); /* ganti dengan path ke gambar background Anda */
+  background-size: cover; /* membuat gambar menutupi seluruh elemen */
+  background-position: center; /* membuat gambar berada di tengah */
+  background-repeat: no-repeat; /* memastikan gambar tidak diulang */
+}
