@@ -15,7 +15,6 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
-  
 
   {
     path: 'profil',
@@ -51,6 +50,7 @@ const routes: Routes = [
     path: 'histori',
     loadChildren: () => import('./histori/histori.module').then( m => m.HistoriPageModule)
   },
+
 ];
 
 @NgModule({
