@@ -44,17 +44,6 @@
   </ion-card>
 </ion-content>
 
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-button (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out"></ion-icon>
-        <p>keluar</p>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-footer>
   <ion-tab-bar slot="bottom">
     <!-- Tab Beranda -->
@@ -64,15 +53,15 @@
     </ion-tab-button>
 
     <!-- Tab Perpustakaan -->
-    <ion-tab-button tab="perpustakaan" routerLink="/perpustakaan">
+    <ion-tab-button tab="library" routerLink="/library">
       <ion-icon name="book-outline"></ion-icon>
-      <ion-label>Perpustakaan</ion-label>
+      <ion-label>library</ion-label>
     </ion-tab-button>
 
     <!-- Tab Kategori -->
-    <ion-tab-button tab="kategori" routerLink="/kategori">
+    <ion-tab-button tab="histori" routerLink="/histori">
       <ion-icon name="apps-outline"></ion-icon>
-      <ion-label>Kategori</ion-label>
+      <ion-label>histori</ion-label>
     </ion-tab-button>
 
     <!-- Tab Profil -->

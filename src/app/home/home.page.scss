@@ -24,7 +24,7 @@
 }
 
 .header {
-  background: #262625; /* Adjust color as needed */
+  background: #68d2ff; /* Adjust color as needed */
   color: #ffffff;
   padding: 20px;
   padding-bottom: 80px; /* Adjust padding-bottom to ensure overlap */
@@ -277,3 +277,15 @@ ion-content {
   background-position: center; /* membuat gambar berada di tengah */
   background-repeat: no-repeat; /* memastikan gambar tidak diulang */
 }
+
+ion-card-content {
+  width: 100%; // Kartu mengisi lebar kontainer
+  margin-bottom: 16px; // Jarak antara kartu
+  border-radius: 8px; // Sudut kartu membulat
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.237); // Efek bayangan lembut
+
+  // Garis bawah
+  border-bottom: 5px solid #cccccc00; // Warna dan ketebalan garis
+}
+
+
