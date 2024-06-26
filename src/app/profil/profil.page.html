@@ -42,6 +42,19 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+
+  <!-- New Logout Button -->
+  <ion-card>
+    <ion-card-content>
+      <ion-item [button]="true" detail="false" (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start" size="large"></ion-icon>
+        <ion-label>
+          <strong>Logout</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
 
 <ion-footer>
@@ -55,14 +68,9 @@
     <!-- Tab Perpustakaan -->
     <ion-tab-button tab="library" routerLink="/library">
       <ion-icon name="book-outline"></ion-icon>
-      <ion-label>library</ion-label>
+      <ion-label>Library</ion-label>
     </ion-tab-button>
 
-    <!-- Tab Kategori -->
-    <ion-tab-button tab="histori" routerLink="/histori">
-      <ion-icon name="apps-outline"></ion-icon>
-      <ion-label>histori</ion-label>
-    </ion-tab-button>
 
     <!-- Tab Profil -->
     <ion-tab-button tab="profil" routerLink="/profil">
@@ -71,3 +79,4 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-footer>
+x 

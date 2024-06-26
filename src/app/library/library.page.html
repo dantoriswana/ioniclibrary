@@ -32,21 +32,21 @@
 
   <!-- Kondisi jika tidak ada hasil pencarian -->
   <ion-note *ngIf="filteredBooks.length === 0 && searchTerm" class="no-results">
-    Tidak ada buku yang ditemukan.
+    Tidak ada buku yang ditemukan. 
   </ion-note>
 
   <!-- Menampilkan semua buku jika tidak ada pencarian aktif -->
-  <div *ngIf="filteredBooks.length === 0 && searchTerm === ''" class="book-container">
+  <div *ngIf="books.length > 0 && searchTerm === ''" class="book-container">
     <ion-card *ngFor="let book of books" class="card top-read-card" [routerLink]="['/book-detail', book.id]">
       <ion-card-content class="no-padding">
         <ion-grid>
           <ion-row class="vertical-center">
             <ion-col size="3">
-              <ion-img [src]="book.imageUrl" alt="{{ book.title }}" class="book-image"></ion-img>
+              <ion-img [src]="book.img_Url" alt="{{ book.img_Url }}" class="book-image"></ion-img>
             </ion-col>
             <ion-col size="9">
-              <h2 class="text-book-title"><b>{{ book.title }}</b></h2>
-              <p class="text-author">{{ book.author }}</p>
+              <h2 class="text-book-title"><b>{{ book.judul_buku }}</b></h2>
+              <p class="text-author">{{ book.pengarang }}</p>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -65,11 +65,6 @@
     <ion-tab-button tab="library" routerLink="/library">
       <ion-icon name="book-outline"></ion-icon>
       <ion-label>Library</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="histori" routerLink="/histori">
-      <ion-icon name="apps-outline"></ion-icon>
-      <ion-label>Histori</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="profil" routerLink="/profil">

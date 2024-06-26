@@ -1,19 +1,20 @@
-// src/app/register/register.page.ts
-
-import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
-  name: string = '';
-  email: string = '';
-  password: string = '';
+export class RegisterPage {
+  user = {
+    email: '',
+    password: '',
+    password_confirmation: '',
+    name: ''
+  };
 
   constructor(
     private authService: AuthService,
@@ -21,18 +22,20 @@ export class RegisterPage implements OnInit {
     private alertController: AlertController
   ) {}
 
-  ngOnInit() {}
-
   async register() {
     try {
-      const res = await this.authService.register({ name: this.name, email: this.email, password: this.password }).toPromise();
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['/home']);
-    } catch (err) {
-      console.error('Registration error:', err);
+      await this.authService.register(this.user);
       const alert = await this.alertController.create({
-        header: 'Registration Failed',
-        message: 'Registration failed. Please try again later.',
+        header: 'Success',
+        message: 'Registration successful',
+        buttons: ['OK']
+      });
+      await alert.present();
+      this.router.navigate(['/login']);
+    } catch (err:unknown) {
+      const alert = await this.alertController.create({
+        header: 'Registration failed',
+        message: (err as any).error.message,
         buttons: ['OK']
       });
       await alert.present();

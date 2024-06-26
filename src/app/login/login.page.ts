@@ -1,40 +1,26 @@
-// src/app/login/login.page.ts
-
-import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { Component, OnInit } from '@angular/core';  // Mengimpor dekorator Component dari Angular core.
+import { AuthService } from '../services/auth.service';  // Mengimpor AuthService.
+import { Router } from '@angular/router';  // Mengimpor Router dari Angular.
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-login',  // Selector komponen.
+  templateUrl: './login.page.html',  // Template URL komponen.
+  styleUrls: ['./login.page.scss'],  // Style URL komponen.
 })
-export class LoginPage implements OnInit {
-  email: string = '';
-  password: string = '';
+export class LoginPage {
+  email: string = '';  // Properti untuk email.
+  password: string = '';  // Properti untuk password.
 
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private alertController: AlertController
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}  // Menginisialisasi AuthService dan Router.
 
-  ngOnInit() {}
-
-  async login() {
-    try {
-      const res = await this.authService.login({ email: this.email, password: this.password }).toPromise();
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['/home']);
-    } catch (err) {
-      console.error('Login error:', err);
-      const alert = await this.alertController.create({
-        header: 'Login Failed',
-        message: 'Please check your credentials and try again.',
-        buttons: ['OK']
-      });
-      await alert.present();
-    }
+  login() {  // Fungsi login yang dipanggil saat user login.
+    this.authService.login({ email: this.email, password: this.password }).subscribe(
+      () => {
+        this.router.navigate(['home']);  // Navigasi ke halaman home setelah login berhasil.
+      },
+      error => {
+        // Penanganan jika login gagal, notifikasi toast akan ditampilkan oleh AuthService.
+      }
+    );
   }
 }

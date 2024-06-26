@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.apiService.getBooks().subscribe((data: any[]) => {
       this.books = data;
+      console.log(data);
     });
   }
 }

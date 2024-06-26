@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AuthGuard } from './guards/auth.guard';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate : [AuthGuard]
   },
   {
     path: 'login',
@@ -18,25 +20,30 @@ const routes: Routes = [
 
   {
     path: 'profil',
-    loadChildren: () => import('./profil/profil.module').then(m => m.ProfilPageModule)
+    loadChildren: () => import('./profil/profil.module').then(m => m.ProfilPageModule),
+    canActivate : [AuthGuard]
   },
 
   {
     path: 'edit-profil',
-    loadChildren: () => import('./edit-profil/edit-profil.module').then(m => m.EditProfilPageModule)
+    loadChildren: () => import('./edit-profil/edit-profil.module').then(m => m.EditProfilPageModule),
+    canActivate : [AuthGuard]
   },
   {
     path: 'keamanan-akun',
-    loadChildren: () => import('./keamanan-akun/keamanan-akun.module').then(m => m.KeamananAkunPageModule)
+    loadChildren: () => import('./keamanan-akun/keamanan-akun.module').then(m => m.KeamananAkunPageModule),
+    canActivate : [AuthGuard]
   },
   {
     path: 'pengaturan',
-    loadChildren: () => import('./pengaturan/pengaturan.module').then(m => m.PengaturanPageModule)
+    loadChildren: () => import('./pengaturan/pengaturan.module').then(m => m.PengaturanPageModule),
+    canActivate : [AuthGuard]
   },
 
   {
     path: 'book-detail/:id',
-    loadChildren: () => import('./pages/book-detail/book-detail.module').then(m => m.BookDetailPageModule)
+    loadChildren: () => import('./pages/book-detail/book-detail.module').then(m => m.BookDetailPageModule),
+    canActivate : [AuthGuard]
   },
   {
     path: 'register',
@@ -44,13 +51,10 @@ const routes: Routes = [
   },
   {
     path: 'library',
-    loadChildren: () => import('./library/library.module').then( m => m.LibraryPageModule)
+    loadChildren: () => import('./library/library.module').then( m => m.LibraryPageModule),
+    canActivate : [AuthGuard]
   },
-  {
-    path: 'histori',
-    loadChildren: () => import('./histori/histori.module').then( m => m.HistoriPageModule)
-  },
-
+  
 ];
 
 @NgModule({

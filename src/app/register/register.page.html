@@ -11,21 +11,33 @@
     <h1>Selamat Bergabung <br> Daftar Untuk Membuat Akun</h1>
 
     <ion-card class="register-card">
-      <ion-card-content>
-        <ion-item>
-          <ion-input type="name" placeholder="Masukan Nama"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input type="email" placeholder="Masukan email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input type="password" placeholder="Masukan password"></ion-input>
-          <ion-button fill="clear" slot="end">
-            <ion-icon name="eye-outline"></ion-icon>
-          </ion-button>
-        </ion-item>
-        <ion-button expand="block" class="register-button" routerLink="/login">Daftar</ion-button>
-      </ion-card-content>
+      <ion-list lines="full">
+        <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+          <form (ngSubmit)="register()">
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input type="text" [(ngModel)]="user.name" name="name" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" [(ngModel)]="user.email" name="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password Confirmation</ion-label>
+              <ion-input type="password" [(ngModel)]="user.password_confirmation" name="password" required></ion-input>
+            </ion-item>
+            <br/>
+            <ion-button expand="full" type="submit">Register</ion-button>
+  
+            <!-- create new account -->
+            <p class="no-account">Allready have an account? <span routerLink="/login">Login</span></p>
+          </form>
+        </ion-item-group>
+      </ion-list>
     </ion-card>
   </div>
 </ion-content>
