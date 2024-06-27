@@ -10,7 +10,7 @@
 
   <div class="avatar-container">
     <ion-avatar class="large-avatar">
-      <img src="https://ionicframework.com/docs/img/demos/avatar.svg">
+      <img [src]="profileImage || 'https://ionicframework.com/docs/img/demos/avatar.svg'">
     </ion-avatar>
   </div>
 
@@ -55,6 +55,15 @@
     </ion-card-content>
   </ion-card>
 
+  <!-- Input untuk upload gambar profil -->
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <input type="file" (change)="onFileChange($event)">
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
 
 <ion-footer>
@@ -71,7 +80,6 @@
       <ion-label>Library</ion-label>
     </ion-tab-button>
 
-
     <!-- Tab Profil -->
     <ion-tab-button tab="profil" routerLink="/profil">
       <ion-icon name="person-outline"></ion-icon>
@@ -79,4 +87,3 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-footer>
-x 

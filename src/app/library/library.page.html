@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" class="content">
   <!-- Fixed header with back button -->
   <div class="fixed-header">
-    <ion-toolbar>
+    <ion-toolbar class="fixed-header-toolbar">
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/home"></ion-back-button>
       </ion-buttons>
@@ -18,11 +18,18 @@
         <ion-grid>
           <ion-row class="vertical-center">
             <ion-col size="3">
-              <ion-img [src]="book.imageUrl" alt="{{ book.title }}" class="book-image"></ion-img>
+              <ion-img [src]="book.img_url" alt="{{ book.title }}" class="book-image"></ion-img>
             </ion-col>
             <ion-col size="9">
-              <h2 class="text-book-title"><b>{{ book.title }}</b></h2>
-              <p class="text-author">{{ book.author }}</p>
+              <h2 class="text-book-title"><b>{{ book.judul_buku }}</b></h2>
+              <p class="text-author">{{ book.pengarang }}</p>
+              <p>Ratings: {{ book.rating }}<ion-icon style="color: yellow;" name="star"></ion-icon></p>
+              <p>Liked by: {{ book.disukai }}<ion-icon name="heart" color="danger"></ion-icon></p>
+              <ion-button  (click)="openBookDetail(book.id)" size="small" class = "button button-assertive button-outline">
+                Open
+             </ion-button>
+
+
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -34,28 +41,9 @@
   <ion-note *ngIf="filteredBooks.length === 0 && searchTerm" class="no-results">
     Tidak ada buku yang ditemukan. 
   </ion-note>
-
-  <!-- Menampilkan semua buku jika tidak ada pencarian aktif -->
-  <div *ngIf="books.length > 0 && searchTerm === ''" class="book-container">
-    <ion-card *ngFor="let book of books" class="card top-read-card" [routerLink]="['/book-detail', book.id]">
-      <ion-card-content class="no-padding">
-        <ion-grid>
-          <ion-row class="vertical-center">
-            <ion-col size="3">
-              <ion-img [src]="book.img_Url" alt="{{ book.img_Url }}" class="book-image"></ion-img>
-            </ion-col>
-            <ion-col size="9">
-              <h2 class="text-book-title"><b>{{ book.judul_buku }}</b></h2>
-              <p class="text-author">{{ book.pengarang }}</p>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-  </div>
 </ion-content>
 
-<ion-footer>
+<ion-footer class="fixed-footer">
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="beranda" routerLink="/home">
       <ion-icon name="home-outline"></ion-icon>

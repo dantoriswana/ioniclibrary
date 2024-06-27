@@ -18,56 +18,50 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Nama Lengkap</ion-label>
-        <ion-input placeholder="Masukkan nama lengkap"></ion-input>
+        <ion-input [(ngModel)]="profile.name" placeholder="Masukkan nama lengkap"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Email</ion-label>
-        <ion-input type="email" placeholder="Email" style="border-radius: 20px; padding: 1em;"></ion-input>
+        <ion-input [(ngModel)]="profile.email" type="email" placeholder="Email" style="border-radius: 20px; padding: 1em;"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Password</ion-label>
-        <ion-input type="password" placeholder="Password" style="border-radius: 20px; padding: 1em;"></ion-input>
+        <ion-input [(ngModel)]="profile.password" type="password" placeholder="Password" style="border-radius: 20px; padding: 1em;"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Nomor Telepon</ion-label>
-        <ion-input type="tel" placeholder="Masukkan nomor telepon"></ion-input>
+        <ion-input [(ngModel)]="profile.phone" type="tel" placeholder="Masukkan nomor telepon"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Pendidikan</ion-label>
-        <ion-input placeholder="Masukkan riwayat pendidikan"></ion-input>
+        <ion-input [(ngModel)]="profile.education" placeholder="Masukkan riwayat pendidikan"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Tanggal Lahir</ion-label>
-        <ion-input type="date" placeholder="Pilih tanggal lahir"></ion-input>
+        <ion-input [(ngModel)]="profile.birthdate" type="date" placeholder="Pilih tanggal lahir"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Ganti Foto</ion-label>
-        <input type="file" accept="image/*" (change)="onFileSelected($event)">
+        <ion-label position="stacked">Ganti Foto Profil</ion-label>
+        <input type="file" (change)="onFileSelected($event)">
       </ion-item>
     </ion-card-content>
   </ion-card>
 
-  <ion-button expand="block">Simpan Perubahan</ion-button>
+  <ion-button expand="block" (click)="saveProfile()">Simpan Perubahan</ion-button>
 </ion-content>
 
 <ion-footer>
   <ion-tab-bar slot="bottom">
     <!-- Tab Beranda -->
-    <ion-tab-button tab="beranda" routerLink="/beranda">
+    <ion-tab-button tab="beranda" routerLink="/home">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Beranda</ion-label>
     </ion-tab-button>
 
     <!-- Tab Perpustakaan -->
-    <ion-tab-button tab="perpustakaan" routerLink="/perpustakaan">
+    <ion-tab-button tab="library" routerLink="/library">
       <ion-icon name="book-outline"></ion-icon>
-      <ion-label>Perpustakaan</ion-label>
-    </ion-tab-button>
-
-    <!-- Tab Kategori -->
-    <ion-tab-button tab="kategori" routerLink="/kategori">
-      <ion-icon name="apps-outline"></ion-icon>
-      <ion-label>Kategori</ion-label>
+      <ion-label>Library</ion-label>
     </ion-tab-button>
 
     <!-- Tab Profil -->

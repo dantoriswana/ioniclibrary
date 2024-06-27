@@ -1,8 +1,13 @@
 <ion-header [translucent]="true" class="content">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs"></ion-back-button>
-    </ion-buttons>
+    <div class="fixed-header">
+      <ion-toolbar class="fixed-header-toolbar">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </div>
+    
     <ion-title>
       Detail Book
     </ion-title>
@@ -21,7 +26,7 @@
             <ion-img src="assets/imgs/1.jpg"></ion-img>
           </ion-col>
         </ion-row>
-        <ion-row>
+        <ion-row>s
           <ion-col size="12" class="ion-text-center">
             <!-- Book Information -->
             <ion-card-title class="text" style="font-size: large;">Laut Bercerita</ion-card-title>
