@@ -31,13 +31,9 @@
     text-overflow: ellipsis;
   }
   
-  .content {
-    --background: url('/assets/imgs/b1.jpg') no-repeat center center fixed;
-    background-size: cover; /* Menyesuaikan gambar latar belakang */
-  }
   
   .large-button {
-    font-size: 16px; /* Ukuran teks dalam tombol */
+    font-size: 15px; /* Ukuran teks dalam tombol */
     padding: 12px 24px; /* Padding (jarak dalam tombol) */
     border-radius: 8px; /* Sudut tombol */
     background-color: #88c2ff; /* Warna latar belakang tombol */
@@ -49,5 +45,13 @@
   
   .large-button:hover {
     background-color: #0056b3; /* Warna latar belakang saat hover */
+  }
+
+  ion-content {
+    --background: none; /* menghilangkan background default */
+    background-image: url(https://i.pinimg.com/736x/ce/85/7a/ce857aeeedf9046b3a3fdc9241ee05a9.jpg); /* ganti dengan path ke gambar background Anda */
+    background-size: cover; /* membuat gambar menutupi seluruh elemen */
+    background-position: center; /* membuat gambar berada di tengah */
+    background-repeat: no-repeat; /* memastikan gambar tidak diulang */
   }
   

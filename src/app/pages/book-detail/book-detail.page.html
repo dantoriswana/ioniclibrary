@@ -7,52 +7,63 @@
         </ion-buttons>
       </ion-toolbar>
     </div>
-    
-    <ion-title>
-      Detail Book
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="content">
-  
-  <!-- Detail Book Section -->
   <ion-card class="custom-card-book-detail">
     <ion-card-content>
       <ion-grid>
         <ion-row>
           <ion-col size="12" class="ion-text-center">
-            <!-- Book Cover -->
-            <ion-img src="assets/imgs/1.jpg"></ion-img>
+            <ion-img [src]="book?.img_url"></ion-img>
+            <!-- Update image source -->
           </ion-col>
         </ion-row>
-        <ion-row>s
-          <ion-col size="12" class="ion-text-center">
-            <!-- Book Information -->
-            <ion-card-title class="text" style="font-size: large;">Laut Bercerita</ion-card-title>
-            <p class="text" style="margin: 0;">Harriss</p>
-            <p class="text" style="margin: 0;">Ratings: <ion-icon style="color: yellow;" name="star"></ion-icon> {{ book?.ratings }}</p>
-            <p>Liked by: <ion-icon name="heart" color="danger"></ion-icon>person</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-  
-  <!-- Book Description Section -->
-  <ion-card class="custom-card-book-detail">
-    <ion-card-content>
-      <ion-grid>
         <ion-row>
           <ion-col size="12" class="ion-text-center">
-            <p class="text" style="text-align: left;"><strong>deskripsi:</strong></p>
-            <p class="text" style="text-align: left;">{{ book?.deskripsi }}</p>
+            <ion-card-title class="text" style="font-size: large"
+              >{{ book?.judul_buku }}</ion-card-title
+            >
+            <p class="text" style="margin: 0">Author : {{ book?.pengarang }}</p>
+            <p class="text" style="margin: 0">
+              Ratings:
+              <ion-icon style="color: yellow" name="star"></ion-icon> {{
+              book?.rating }}
+            </p>
+            <p>
+              Liked by: <ion-icon name="heart" color="danger"></ion-icon> {{
+              book?.likes_count }} people
+            </p>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
 
+  <ion-card class="custom-card-book-detail">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <p class="text" style="text-align: left"></p>
+            <!-- Update description -->
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <ion-button
+              expand="full"
+              color="primary"
+              (click)="readBook(book?.id)"
+              >Baca</ion-button
+            >
+            <!-- Add button with "Baca" text -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer>
@@ -69,7 +80,6 @@
       <ion-label>Library</ion-label>
     </ion-tab-button>
 
-
     <!-- Tab Profil -->
     <ion-tab-button tab="profil" routerLink="/profil">
       <ion-icon name="person-outline"></ion-icon>
@@ -77,3 +87,4 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-footer>
+

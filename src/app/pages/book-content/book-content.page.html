@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/book-detail"></ion-back-button>
+    </ion-buttons>
+    <ion-title>BookContent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="content-container" *ngIf="bookContent.length > 0; else noContent">
+    <ion-card *ngFor="let content of bookContent" class="ion-text-center">
+      <ion-card-content>
+        <p>{{ content.content }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #noContent>
+    <div class="ion-text-center">
+      <p>No content available.</p>
+    </div>
+  </ng-template>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <!-- Tab Beranda -->
+    <ion-tab-button tab="beranda" routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Beranda</ion-label>
+    </ion-tab-button>
+
+    <!-- Tab Perpustakaan -->
+    <ion-tab-button tab="library" routerLink="/library">
+      <ion-icon name="book-outline"></ion-icon>
+      <ion-label>Library</ion-label>
+    </ion-tab-button>
+
+    <!-- Tab Profil -->
+    <ion-tab-button tab="profil" routerLink="/profil">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Profil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+

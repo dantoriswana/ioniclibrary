@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BookService } from '../../services/book.service'; // Sesuaikan dengan lokasi BookService Anda
+import { ActivatedRoute, Router } from '@angular/router'; // Import Router
+import { BookService } from '../../services/book.service'; // Adjust according to your BookService location
 
 @Component({
   selector: 'app-book-detail',
@@ -8,10 +8,11 @@ import { BookService } from '../../services/book.service'; // Sesuaikan dengan l
   styleUrls: ['./book-detail.page.scss'],
 })
 export class BookDetailPage implements OnInit {
-  book: any = {}; // Inisialisasi objek untuk menyimpan detail buku
+  book: any = {}; // Initialize an object to store book details
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router, // Inject Router
     private bookService: BookService
   ) {}
 
@@ -20,15 +21,26 @@ export class BookDetailPage implements OnInit {
   }
 
   getBookDetail() {
-    const bookId = this.route.snapshot.paramMap.get('id'); // Ambil id buku dari URL
+    const bookId = this.route.snapshot.paramMap.get('id'); // Get book id from URL
+    console.log('Book ID from URL:', bookId); // Print bookId to console
     if (bookId) {
-      this.loadBookDetail(+bookId); // Panggil metode untuk memuat detail buku
+      this.loadBookDetail(+bookId); // Call method to load book details
     }
   }
 
+  readBook(id: string) {
+    this.router.navigate(['/book-content', id]); // Use this.router to navigate
+  }
+
   loadBookDetail(bookId: number) {
-    this.bookService.getBook(bookId).subscribe((data) => {
-      this.book = data; // Memuat detail buku dari BookService
+    this.bookService.getBook(bookId).subscribe({
+      next: (data) => {
+        console.log('Book data received:', data); // Print book data to console
+        this.book = data; // Load book details from BookService
+      },
+      error: (error) => {
+        console.error('Error fetching book details:', error); // Print error if any
+      },
     });
   }
 }

@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BookService {
   private apiUrl = 'http://localhost:8000/api/books'; // Ganti sesuai dengan URL API Anda
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getBooks(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
@@ -21,5 +21,8 @@ export class BookService {
   likeBook(bookId: number, liked: boolean): Observable<any> {
     const body = { liked: liked }; // Misalnya, kirim status liked ke backend
     return this.http.put<any>(`${this.apiUrl}/${bookId}/like`, body);
+  }
+  getBookContent(bookId: number): Observable<any> {
+    return this.http.get<any>(`http://127.0.0.1:8000/api/isi-bukus/${bookId}`);
   }
 }
